@@ -27,8 +27,21 @@ class ActivitiesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'type' => 'required|in:surf,windsurf,kayak,atv,hot air balloon',
+            'user_id' => 'required|exists:users,id',
+            'datetime' => 'required|date',
+            'paid' => 'required|boolean',
+            'notes' => 'nullable|string',
+            'satisfaction' => 'required|integer|min:0|max:10',
+        ]);
+    
+        Activity::create($validatedData);
+    
+        return redirect()->route('activities.index')
+            ->with('success', 'Activity created successfully.');
     }
+    
 
     /**
      * Display the specified resource.
@@ -51,8 +64,23 @@ class ActivitiesController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $activity = Activity::findOrFail($id);
+    
+        $validatedData = $request->validate([
+            'type' => 'required|in:surf,windsurf,kayak,atv,hot air balloon',
+            'user_id' => 'required|exists:users,id',
+            'datetime' => 'required|date',
+            'paid' => 'required|boolean',
+            'notes' => 'nullable|string',
+            'satisfaction' => 'required|integer|min:0|max:10',
+        ]);
+    
+        $activity->update($validatedData);
+    
+        return redirect()->route('activities.index')
+            ->with('success', 'Activity updated successfully.');
     }
+    
 
     /**
      * Remove the specified resource from storage.
