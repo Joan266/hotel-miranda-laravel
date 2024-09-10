@@ -1,0 +1,148 @@
+@import '../_variables.scss';
+
+.facilities-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 0.25em;
+}
+
+.facilities-grid__cell {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0.5em 0 0.5em 0;
+}
+
+.facilities-grid__cell--exception {
+  display: none;
+}
+
+.facilities-grid__cell--tan {
+  background-color: $beige-tan;
+}
+
+.facilities-grid__cell__icon {
+  width: 6em;
+  height: 6em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  background-color: transparent;
+}
+
+.video {
+  height: 9em;
+
+  >video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.about-us__restaurant {
+  margin: 1em 0;
+  padding: 1em;
+  background-color: white;
+  border-radius: 0.3em;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.about-us__restaurant__img {
+  >img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.counter {
+  text-align: left;
+}
+
+.facts {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5em;
+  padding: 2em;
+}
+
+.facts__item {
+  width: 100%;
+  display: flex;
+  gap: 1.5em;
+  justify-content: left;
+  flex-direction: row;
+  align-items: center;
+}
+
+.facts__item__title {
+  font-family: $font-old-standard-tt;
+  color: #222222;
+  font-size: 2.7rem;
+  font-weight: 400;
+}
+
+.facts__item__subtitle {
+  color: #999999;
+  font-family: $font-roboto;
+  font-size: 0.75rem;
+  font-weight: 400;
+}
+
+@media only screen and (min-width: 1000px) {
+  .about-us {
+    padding: 0;
+    margin-bottom: 5em;
+  }
+
+  .video {
+    height: 27em;
+  }
+
+  .about-us__restaurant {
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+    margin-top: 2em;
+    padding: 1em 1.5em;
+  }
+
+  .about-us__restaurant__img {
+    height: 20em;
+    min-width: 22em;
+  }
+
+  .about-us__restaurant__info {
+    padding: 1em 0;
+  }
+
+  .facilities-grid {
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    gap: 0.5em;
+    margin: 3em 0;
+  }
+
+  .facilities-grid__cell--exception {
+    display: flex;
+  }
+
+  .facts {
+    flex-direction: row;
+    margin-bottom: 2em;
+  }
+
+}
+
+@media only screen and (min-width: 1500px) {
+  .facilities-grid__cell {
+    padding-bottom: 1.5em;
+  }
+}

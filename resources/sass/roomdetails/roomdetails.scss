@@ -1,0 +1,261 @@
+@import '../_variables.scss';
+
+.room-details__info {
+  >section {
+    margin-bottom: 3em;
+  }
+}
+
+.room-details__header {
+  margin-bottom: 1em;
+}
+
+.room-details__price {
+  font-family: $font-archivo;
+  color: $beige-tan;
+  font-weight: 700;
+  font-size: 1.45rem;
+
+  >span {
+    font-size: 0.55rem;
+    font-weight: 500;
+  }
+}
+
+.room-details__img {
+  margin-top: 1em;
+  width: 100%;
+  height: auto;
+
+  >img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.room-details__form {
+  margin-top: 2em;
+  margin-bottom: 2em;
+  padding: 0 0.7em;
+  display: block;
+  text-align: left;
+
+  >h5 {
+    font-weight: 700;
+    font-family: $font-archivo;
+    font-size: 0.85rem;
+    margin-left: 3em;
+    margin-bottom: 1.25em;
+  }
+
+  label {
+    font-family: $font-roboto;
+    font-weight: 700;
+    font-size: 0.75rem;
+    width: 100%;
+    color: #222222;
+  }
+
+  .input-container {
+    position: relative;
+    margin-top: 0.7em;
+    margin-bottom: 1em;
+
+    input {
+      cursor: pointer;
+      width: 100%;
+      border: none;
+      color: #777777;
+      background-color: #F8F8F8;
+      font-family: $font-roboto;
+      font-weight: 400;
+      font-size: 0.8rem;
+      height: 3em;
+      padding-left: 1.5em;
+    }
+  }
+
+  .date-input-room-details::after {
+    content: url(/public/icon/calendar_icon\ 2.svg);
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .button {
+    width: 100%;
+  }
+}
+
+.room-details__form--desktop {
+  display: none;
+}
+
+.room-details__form--mobile {
+  display: block;
+}
+
+.amenities__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1em;
+  border-top: 1px solid #F1F1F1;
+  padding-top: 1.4em;
+}
+
+.amenities__item {
+  font-weight: 500;
+  font-family: $font-roboto;
+  color: #777777;
+  font-size: 0.65rem;
+
+  >img {
+    margin-top: 0.1em;
+    margin-right: 0.5em;
+  }
+}
+
+.founder {
+  text-align: center;
+  padding: 0 2em;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.founder__pic {
+  border-radius: 50%;
+  background-color: lightgrey;
+  width: 7.5em;
+  height: 7.5em;
+  margin-bottom: 1em;
+  position: relative;
+
+  >img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.founder__pic__check {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 2.3em;
+  height: 2.3em;
+  background-color: $beige-tan;
+  border: 4px solid white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cancellation {
+  >h3 {
+    border-bottom: 1px solid #F1F1F1;
+    padding-bottom: 0.4em;
+  }
+}
+
+.related-room {
+  >h3 {
+    border-bottom: 1px solid #F1F1F1;
+    padding-bottom: 0.4em;
+  }
+}
+
+
+@media only screen and (min-width: 1000px) {
+  .room-details {
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    justify-content: space-between;
+  }
+
+  .room-details__info {
+    width: 60%;
+
+    >section {
+      margin-bottom: 4em;
+    }
+  }
+
+
+  .room-details__form--mobile {
+    display: none;
+  }
+
+  .room-details__form--desktop {
+    display: block;
+    margin-top: 0;
+    width: 35%;
+    position: relative;
+
+    >form {
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      padding: 2em 1.5em;
+
+      >h5 {
+        font-weight: 700;
+        font-family: $font-archivo;
+        margin-left: 3em;
+        font-size: 1rem;
+        margin-bottom: 2.25em;
+      }
+
+      .input-container {
+        margin-top: 1em;
+      }
+    }
+  }
+
+  .room-details__header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 95%;
+    flex-direction: row;
+    transform: translate(0, -30%);
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1.5em;
+    background-color: white;
+  }
+
+  .room-details__img {
+    position: relative;
+    width: 100%;
+    margin-bottom: 2em;
+
+    >img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .amenities {
+    margin-left: 1em;
+  }
+
+  .amenities__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .founder {
+    width: 65%;
+    box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.3);
+    padding: 3em 2em;
+  }
+
+  .cancellation {
+    margin-left: 1em;
+  }
+}

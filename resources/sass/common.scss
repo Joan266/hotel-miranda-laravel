@@ -1,0 +1,399 @@
+@import './_variables.scss';
+
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Old+Standard+TT:wght@400;700&family=Roboto:wght@400;500;700&display=swap');
+
+html,
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0
+}
+
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+input[type="date"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  outline: none;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
+//SWIPER COMMON STYLING
+.non-swiper {
+  display: none;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: $beige-tan;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  height: 2em;
+  width: 2em;
+  color: $beige-tan;
+  background-color: #F8F8F8;
+  transition: background-color 100ms ease, color 100ms ease;
+  border: 1px solid $beige-tan;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background-color: $beige-tan;
+  color: #F8F8F8;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-size: 0.7rem;
+  font-weight: bolder;
+}
+
+.container {
+  position: relative;
+  padding: 0 1em;
+  margin-bottom: 4em;
+  max-width: 375px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.facilities {
+  position: relative;
+  text-align: center;
+}
+
+.facilities--black {
+  >div {
+    padding: 4em 1em;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background-color: #222222;
+    z-index: -1;
+    transform: translateX(-50%);
+  }
+}
+
+.title {
+  color: #222222;
+  font-family: $font-old-standard-tt;
+  font-size: 2.65rem;
+  font-weight: 400;
+  margin: 0.4em 0;
+}
+
+
+.title--white {
+  color: #FFFFFF;
+}
+
+.title--smaller {
+  font-size: 1.2rem;
+}
+
+.title--small {
+  font-size: 1.4rem;
+}
+
+.title--medium {
+  font-size: 1.8rem;
+}
+
+.subtitle {
+  color: #777777;
+  margin: 0.7em 0;
+  font-size: 0.65rem;
+  font-family: $font-archivo;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+}
+
+.subtitle--black {
+  color: #222222;
+}
+
+.subtitle--white {
+  color: #FFFFFF;
+}
+
+.subtitle--golden {
+  color: $beige-tan;
+}
+
+.text {
+  font-family: $font-roboto;
+  margin-top: 1.5em;
+  font-size: 0.7em;
+  line-height: 1.8;
+  color: #777777;
+}
+
+.text--small {
+  font-size: 0.65rem;
+}
+
+.text--white {
+  color: #FFFFFF;
+}
+
+.border-bottom {
+  border-bottom: 1px solid #ECECEC;
+}
+
+.crossed {
+  text-decoration: line-through;
+}
+
+.button {
+  display: block;
+  border: none;
+  text-align: center;
+  background-color: $beige-tan;
+  padding: 1.2em;
+  color: #FFFFFF;
+  white-space: nowrap;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  margin-top: 1em;
+  width: fit-content;
+  font-size: 0.7rem;
+  font-family: $font-archivo;
+  cursor: pointer;
+  box-shadow: 1px 5px 9px rgba(0, 0, 0, 0.09);
+}
+.button:hover {
+  background-color: #76aa72c3;
+  box-shadow: 2px 6px 12px rgba(0, 0, 0, 0.15); 
+}
+.button--black {
+  border: 2px solid #FFFFFF54;
+  background-color: transparent;
+}
+
+.logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.icon {
+  width: 2em;
+  height: 2em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+}
+
+.icon--twitter {
+  background-color: $beige-tan;
+}
+
+.icon--logo {
+  box-shadow: 0px 14px 24px 0px #8B8B8B40;
+  height: 2em;
+  width: 2em;
+  margin-right: 0.25em;
+  font-family: $font-archivo;
+}
+
+.icon--logo-big {
+  box-shadow: 0px 14px 24px 0px #8B8B8B40;
+  margin-right: 0.5em;
+  font-family: $font-archivo;
+  font-weight: 700;
+  font-size: 1.7rem;
+}
+
+.logo--footer {
+  margin-bottom: 1.5em;
+
+  .icon--logo {
+    background-color: $beige-tan;
+    height: 2em;
+    width: 2em;
+    margin-right: 0.5em;
+    font-weight: 700;
+    color: white;
+    font-size: 1.4rem;
+  }
+
+  img {
+    height: 1.7em;
+    width: auto;
+  }
+}
+
+.page-intro {
+  position: relative;
+
+  >div {
+    padding-top: 8em;
+    height: 18em;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 100%;
+    height: 4em;
+    background-color: #222222;
+    z-index: -1;
+    transform: translateX(-50%);
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: -2;
+    background-color: #333333;
+    height: 18em;
+  }
+}
+
+.page-intro__path-info {
+  background-color: #ffffff;
+  color: #333333;
+  position: absolute;
+  bottom: 0;
+  right: 1em;
+  font-family: $font-roboto;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 1em 1.25em;
+  transform: translateY(50%);
+
+  >span {
+    color: $beige-tan;
+  }
+}
+
+
+.big-p {
+  font-family: $font-old-standard-tt;
+  font-size: x-large;
+  text-align: center;
+  margin: 1em 0;
+  line-height: 1.4;
+}
+
+
+@media only screen and (min-width: 1000px) {
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    height: 2.3em;
+    width: 2.3em;
+  }
+
+  .container {
+    padding: 0;
+    max-width: 950px;
+    margin-bottom: 6em;
+  }
+
+  .facilities--black {
+    >div {
+      padding: 4em 0;
+    }
+  }
+
+  .button {
+    margin-top: 2em;
+  }
+
+  .title {
+    font-size: 4.5rem;
+  }
+
+  .title--smaller {
+    font-size: 1.3rem;
+  }
+
+  .title--small {
+    font-size: 1.5rem;
+  }
+
+  .title--medium {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 0.75rem;
+  }
+
+  .page-intro {
+    >div {
+      padding-bottom: 3em;
+      padding-top: 12em;
+      height: 25em;
+      margin-bottom: 4em;
+    }
+
+    &::after {
+      height: 5em;
+    }
+
+    &::before {
+      height: 25em;
+    }
+  }
+
+  .page-intro__path-info {
+    right: 0;
+    font-size: 0.9rem;
+    padding: 1em 4em;
+  }
+
+ 
+  .big-p {
+    min-width: 20em;
+    padding: 0 1.5em;
+    font-size: 2.3rem;
+  }
+
+  .text {
+    font-size: 0.75rem;
+  }
+
+  .text--small {
+    font-size: 0.7rem;
+  }
+}
+
+
+@media only screen and (min-width: 1500px) {
+  .container {
+    max-width: 1150px;
+    margin-bottom: 8em;
+  }
+}
