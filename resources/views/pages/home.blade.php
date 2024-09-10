@@ -3,13 +3,13 @@
 @section('title', 'Home')
 
 @section('content')
-    @include('home.intro')
-    @include('home.about-us')
-    @include('home.rooms')
-    @include('home.intro-video')
-    @include('home.facilities')
-    @include('home.food-menu')
-    @include('home.stats')
+    @include('pages.home.intro')
+    @include('pages.home.about-us')
+    @include('pages.home.rooms')
+    @include('pages.home.intro-video')
+    @include('pages.home.facilities')
+    @include('pages.home.food-menu')
+    @include('pages.home.stats')
 @endsection
 
 @push('styles')
