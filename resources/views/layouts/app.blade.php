@@ -13,17 +13,12 @@
         @stack('styles')
       </head>
     <body>
-        @section('header')
-            This is the master header.
-        @show
- 
-        <main>
-            @yield('content')
-        </main>
+         @include('partials.header')  
 
-        @section('footer')
-            This is the master header.
-        @show
+        @yield('content')
+
+        @include('partials.footer') 
+        
         @vite([
             'resources/js/menu.js'
          ])
