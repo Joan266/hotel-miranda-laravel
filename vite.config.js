@@ -9,6 +9,8 @@ export default defineConfig({
                 'resources/sass/footer.scss', 
                 'resources/sass/common.scss', 
                 'resources/sass/home/home.scss', 
+                'resources/sass/home/swiper/facilities.scss', 
+                'resources/sass/offers/offers.scss', 
                 'resources/sass/contact/contact.scss', 
                 'resources/sass/roomdetails/roomdetails.scss', 
                 'resources/sass/rooms/rooms.scss', 

@@ -23,5 +23,6 @@
             'resources/js/menu.js'
          ])
         @stack('scripts')
+        
     </body>
 </html>

@@ -17,7 +17,7 @@
                     <input id="departure-date" name="departure-date" type="date">
                 </div>
             </div>
-            <a href="{{ route('rooms.index') }}" class="button">CHECK AVAILABILITY</a>
+            <a href="#" class="button">CHECK AVAILABILITY</a>
         </form>
     </div>
 </section>

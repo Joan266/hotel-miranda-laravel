@@ -12,7 +12,7 @@
             <div class="swiper-slide">
                 <div class="swiper-slide__info">
                     <div class="swiper-slide__info__img">
-                        <img src="{{ asset('img/eggs-bacon.webp') }}" alt="Eggs & Bacon">
+                        <img src="{{ asset('img/eggs-bacon.webp') }}" alt="food 1">
                     </div>
                     <div class="swiper-slide__info__container">
                         <div class="swiper-slide__info__container__description">
@@ -24,9 +24,131 @@
                         </div>
                     </div>
                 </div>
-                <!-- Repeat other slides as necessary -->
+                <div class="swiper-slide__info">
+                    <div class="swiper-slide__info__img">
+                        <img src="{{ asset('img/coffe-machine.webp') }}" alt="Tea or Coffee">
+                    </div>
+                    <div class="swiper-slide__info__container">
+                        <div class="swiper-slide__info__container__description">
+                            <h5 class="swiper-slide__info__title">Tea or Coffee</h5>
+                            <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
+                        </div>
+                        <div class="swiper-slide__info__container__arrow">
+                            <img src="{{ asset('icon/right-arrow_icon 1.svg') }}" alt="right arrow icon">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide__info">
+                    <div class="swiper-slide__info__img">
+                        <img src="{{ asset('img/avocado-toast.webp') }}" alt="Chia OatMeal">
+                    </div>
+                    <div class="swiper-slide__info__container">
+                        <div class="swiper-slide__info__container__description">
+                            <h5 class="swiper-slide__info__title">Chia OatMeal</h5>
+                            <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
+                        </div>
+                        <div class="swiper-slide__info__container__arrow">
+                            <img src="{{ asset('icon/right-arrow_icon 1.svg') }}" alt="right arrow icon">
+                        </div>
+                    </div>
+                </div>
             </div>
-            <!-- Repeat slides for more items -->
+
+            <div class="swiper-slide">
+                <div class="swiper-slide__info">
+                    <div class="swiper-slide__info__img">
+                        <img src="{{ asset('img/eggs-bacon.webp') }}" alt="food 1">
+                    </div>
+                    <div class="swiper-slide__info__container">
+                        <div class="swiper-slide__info__container__description">
+                            <h5 class="swiper-slide__info__title">Eggs & Bacon</h5>
+                            <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
+                        </div>
+                        <div class="swiper-slide__info__container__arrow">
+                            <img src="{{ asset('icon/right-arrow_icon 1.svg') }}" alt="right arrow icon">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="swiper-slide__info">
+                    <div class="swiper-slide__info__img">
+                        <img src="{{ asset('img/coffe-machine.webp') }}" alt="Tea or Coffee">
+                    </div>
+                    <div class="swiper-slide__info__container">
+                        <div class="swiper-slide__info__container__description">
+                            <h5 class="swiper-slide__info__title">Tea or Coffee</h5>
+                            <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
+                        </div>
+                        <div class="swiper-slide__info__container__arrow">
+                            <img src="{{ asset('icon/right-arrow_icon 1.svg') }}" alt="right arrow icon">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide__info">
+                    <div class="swiper-slide__info__img">
+                        <img src="{{ asset('img/avocado-toast.webp') }}" alt="Chia OatMeal">
+                    </div>
+                    <div class="swiper-slide__info__container">
+                        <div class="swiper-slide__info__container__description">
+                            <h5 class="swiper-slide__info__title">Chia OatMeal</h5>
+                            <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
+                        </div>
+                        <div class="swiper-slide__info__container__arrow">
+                            <img src="{{ asset('icon/right-arrow_icon 1.svg') }}" alt="right arrow icon">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="swiper-slide__info">
+                    <div class="swiper-slide__info__img">
+                        <img src="{{ asset('img/eggs-bacon.webp') }}" alt="food 1">
+                    </div>
+                    <div class="swiper-slide__info__container">
+                        <div class="swiper-slide__info__container__description">
+                            <h5 class="swiper-slide__info__title">Eggs & Bacon</h5>
+                            <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
+                        </div>
+                        <div class="swiper-slide__info__container__arrow">
+                            <img src="{{ asset('icon/right-arrow_icon 1.svg') }}" alt="right arrow icon">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="swiper-slide__info">
+                    <div class="swiper-slide__info__img">
+                        <img src="{{ asset('img/coffe-machine.webp') }}" alt="Tea or Coffee">
+                    </div>
+                    <div class="swiper-slide__info__container">
+                        <div class="swiper-slide__info__container__description">
+                            <h5 class="swiper-slide__info__title">Tea or Coffee</h5>
+                            <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
+                        </div>
+                        <div class="swiper-slide__info__container__arrow">
+                            <img src="{{ asset('icon/right-arrow_icon 1.svg') }}" alt="right arrow icon">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide__info">
+                    <div class="swiper-slide__info__img">
+                        <img src="{{ asset('img/avocado-toast.webp') }}" alt="Chia OatMeal">
+                    </div>
+                    <div class="swiper-slide__info__container">
+                        <div class="swiper-slide__info__container__description">
+                            <h5 class="swiper-slide__info__title">Chia OatMeal</h5>
+                            <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
+                        </div>
+                        <div class="swiper-slide__info__container__arrow">
+                            <img src="{{ asset('icon/right-arrow_icon 1.svg') }}" alt="right arrow icon">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
         <div class="swiper-button-prev"></div>
         <div class="swiper-button-next"></div>
