@@ -10,6 +10,7 @@ export default defineConfig({
                 'resources/sass/common.scss', 
                 'resources/sass/home/home.scss', 
                 'resources/sass/contact/contact.scss', 
+                'resources/sass/roomdetails/roomdetails.scss', 
                 'resources/sass/rooms/rooms.scss', 
                 'resources/sass/about-us/about-us.scss', 
                 'resources/js/app.js',
