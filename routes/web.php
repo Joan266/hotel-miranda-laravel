@@ -11,7 +11,7 @@ Route::get('/', function () {
     return view('pages.home');
 })->name('home');
 
-Route::get('/about-us', function () {
+Route::get('/aboutus', function () {
     return view('pages.aboutus');
 })->name('about');
 

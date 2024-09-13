@@ -2,8 +2,8 @@
     <div class="rooms__grid container">
         <div class="rooms__grid__item">
             <div class="rooms__grid__item__features">
-                <img class="rooms__grid__item__features__icons" src="{{ asset('public/icon/hotel-room-features 1.svg') }}" alt="hotel room features">
-                <img class="rooms__grid__item__features__img" src="{{ asset('public/img/room 1.webp') }}" alt="room 1">
+                <img class="rooms__grid__item__features__icons" src="{{ asset('icon/hotel-room-features 1.svg') }}" alt="hotel room features">
+                <img class="rooms__grid__item__features__img" src="{{ asset('img/room 1.webp') }}" alt="room 1">
             </div>
             <div class="rooms__grid__item__description">
                 <h4 class="title title--black title--small">Minimal Duplex Room</h4>
@@ -16,8 +16,8 @@
         </div>
         <div class="rooms__grid__item">
             <div class="rooms__grid__item__features">
-                <img class="rooms__grid__item__features__icons" src="{{ asset('public/icon/hotel-room-features 1.svg') }}" alt="hotel room features">
-                <img class="rooms__grid__item__features__img" src="{{ asset('public/img/room 1.webp') }}" alt="room 1">
+                <img class="rooms__grid__item__features__icons" src="{{ asset('icon/hotel-room-features 1.svg') }}" alt="hotel room features">
+                <img class="rooms__grid__item__features__img" src="{{ asset('img/room 1.webp') }}" alt="room 1">
             </div>
             <div class="rooms__grid__item__description">
                 <h4 class="title title--black title--small">Minimal Duplex Room</h4>
@@ -30,8 +30,8 @@
         </div>
         <div class="rooms__grid__item">
             <div class="rooms__grid__item__features">
-                <img class="rooms__grid__item__features__icons" src="{{ asset('public/icon/hotel-room-features 1.svg') }}" alt="hotel room features">
-                <img class="rooms__grid__item__features__img" src="{{ asset('public/img/room 1.webp') }}" alt="room 1">
+                <img class="rooms__grid__item__features__icons" src="{{ asset('icon/hotel-room-features 1.svg') }}" alt="hotel room features">
+                <img class="rooms__grid__item__features__img" src="{{ asset('img/room 1.webp') }}" alt="room 1">
             </div>
             <div class="rooms__grid__item__description">
                 <h4 class="title title--black title--small">Minimal Duplex Room</h4>
@@ -44,8 +44,8 @@
         </div>
         <div class="rooms__grid__item">
             <div class="rooms__grid__item__features">
-                <img class="rooms__grid__item__features__icons" src="{{ asset('public/icon/hotel-room-features 1.svg') }}" alt="hotel room features">
-                <img class="rooms__grid__item__features__img" src="{{ asset('public/img/room 1.webp') }}" alt="room 1">
+                <img class="rooms__grid__item__features__icons" src="{{ asset('icon/hotel-room-features 1.svg') }}" alt="hotel room features">
+                <img class="rooms__grid__item__features__img" src="{{ asset('img/room 1.webp') }}" alt="room 1">
             </div>
             <div class="rooms__grid__item__description">
                 <h4 class="title title--black title--small">Minimal Duplex Room</h4>

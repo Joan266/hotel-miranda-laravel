@@ -1,11 +1,10 @@
 <header>
-    <!-- Mobile Menu -->
     <div id="menu-mobile" class="menu-mobile">
         <div class="menu-mobile__container">
             <div id="hamburguer" class="icon">
                 <img id="menu-icon" src="{{ asset('icon/hamburguer 1.svg') }}" alt="hamburguer menu">
             </div>
-            <a href="{{ url('home') }}">
+            <a href="{{ url('/') }}">
                 <article class="logo">
                     <div class="icon icon--logo">H</div>
                     <img src="{{ asset('icon/Hotel Miranda.svg') }}" alt="hotel miranda text">
@@ -22,10 +21,9 @@
         </div>
     </div>
 
-    <!-- Desktop Menu -->
     <div id="menu-desktop" class="menu-desktop">
         <div class="menu-desktop__logo">
-            <a href="{{ url('home') }}">
+            <a href="{{ url('/') }}">
                 <article class="logo">
                     <div class="icon icon--logo-big">H</div>
                     <img src="{{ asset('icon/Hotel Miranda desktop.svg') }}" alt="hotel miranda text">
@@ -48,7 +46,6 @@
         </div>
     </div>
 
-    <!-- Dropdown Menu -->
     <div id="drop-down" class="drop-down">
         <a href="{{ url('aboutus') }}">About Us</a>
         <a href="{{ url('rooms') }}">Rooms</a>

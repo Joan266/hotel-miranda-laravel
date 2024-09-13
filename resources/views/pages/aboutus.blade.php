@@ -10,10 +10,11 @@
 @endsection
 
 @push('styles')
-    @vite([
-        'resources/sass/aboutus/aboutus.scss',
-    ])
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    @vite([
+        'resources/sass/common.scss',
+        'resources/sass/about-us/about-us.scss',
+    ])
 @endpush
 
 @push('scripts')
