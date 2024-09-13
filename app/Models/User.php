@@ -49,4 +49,13 @@ class User extends Authenticatable
     {
         return $this->hasMany(Activity::class);
     }
+
+    public function bookings()
+    {
+        return $this->hasMany(Bookings::class);
+    }
+    public function contact()
+    {
+        return $this->hasMany(Contact::class);
+    }
 }

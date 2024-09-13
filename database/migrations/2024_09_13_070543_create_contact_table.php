@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::table('contact', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained()->onDelete('cascade'); 
+            $table->foreignId('room_id')->constrained()->onDelete('cascade'); 
             $table->timestamp('review_date');
             $table->text('comment'); 
             $table->unsignedTinyInteger('rating'); 
