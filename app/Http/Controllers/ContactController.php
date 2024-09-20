@@ -29,8 +29,23 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-        Message::create($request->all());
-        return redirect()->back()->with('success', 'Message sent successfully.');
+        $validated = $request->validate([
+            'fullname' => 'required|string|max:255',
+            'phone' => 'required|string|max:20',
+            'email' => 'required|email|max:255',
+            'subject' => 'required|string|max:255',
+            'message' => 'required|string|max:1000',
+        ]);
+
+        Contact::create([
+            'fullname' => $validated['fullname'],
+            'phone' => $validated['phone'],
+            'email' => $validated['email'],
+            'subject' => $validated['subject'],
+            'message' => $validated['message'],
+        ]);
+
+        return redirect()->back()->with('success', 'Your review has been submitted successfully!');
     }
   
 

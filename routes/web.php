@@ -33,6 +33,8 @@ Route::get('/contact', function () {
     return view('pages.contact');
 })->name('contact');
 
+Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
+
 Route::get('/roomdetails', function () {
     return view('pages.roomdetails');
 })->name('roomdetails');
