@@ -2,22 +2,23 @@
 
 namespace Database\Factories;
 
+use App\Models\Contact;
+use App\Models\User;
+use App\Models\Room;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-/**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Contact>
- */
 class ContactFactory extends Factory
 {
-    /**
-     * Define the model's default state.
-     *
-     * @return array<string, mixed>
-     */
-    public function definition(): array
+    protected $model = Contact::class;
+
+    public function definition()
     {
         return [
-            //
+            'user_id' => User::factory(), 
+            'room_id' => Room::factory(), 
+            'message' => $this->faker->paragraph(),
+            'subject' => $this->faker->sentence(),
+            'rating' => $this->faker->numberBetween(1, 5), 
         ];
     }
 }
