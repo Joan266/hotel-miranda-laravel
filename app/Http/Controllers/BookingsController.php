@@ -27,11 +27,27 @@ class BookingsController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreBookingsRequest $request)
+    public function store(Request $request)
     {
-        //
-    }
+        $validatedData = $request->validate([
+            'check_in' => 'required|date',
+            'check_out' => 'required|date|after:check_in',
+            'fullname' => 'required|string|max:255',
+            'email' => 'required|email',
+            'phone' => 'required|string|max:15',
+        ]);
 
+        Booking::create([
+            'check_in' => $validatedData['check_in'],
+            'check_out' => $validatedData['check_out'],
+            'fullname' => $validatedData['fullname'],
+            'email' => $validatedData['email'],
+            'phone' => $validatedData['phone'],
+            'room_id' => $request->room_id,  
+        ]);
+
+        return redirect()->back()->with('success', 'Booking successfully made!');
+    }
     /**
      * Display the specified resource.
      */

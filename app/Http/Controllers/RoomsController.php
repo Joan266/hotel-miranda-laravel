@@ -19,10 +19,16 @@ class RoomsController extends Controller
     }
 
     public function show($id)
-    {
-        $room = Rooms::with(['roomType', 'amenities', 'images'])->findOrFail($id);
-        return view('rooms.roomDetails', compact('room'));
-    }
+{
+    $room = Rooms::with(['roomType', 'amenities', 'images'])->findOrFail($id);
+
+    $relatedRooms = Rooms::where('id', '!=', $room->id)
+                         ->where('roomType', $room->roomType)
+                         ->take(4)
+                         ->get();
+
+    return view('rooms.roomDetails', compact('room', 'relatedRooms'));
+}
 
     public function storeBooking(Request $request)
     {
@@ -45,7 +51,7 @@ class RoomsController extends Controller
 
         return redirect()->route('rooms', $request->room_id)->with('success', 'Booking created successfully');
     }
-    
+
     public function availability(Request $request)
     {
         $bookings = Bookings::whereBetween('checkIn', [$request->checkIn, $request->checkOut])

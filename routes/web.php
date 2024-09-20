@@ -3,6 +3,8 @@
 // use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ActivitiesController;
+use App\Http\Controllers\BookingController;
+use App\Http\Controllers\RoomsController;
 
 Route::resource('activities', ActivitiesController::class);
 
@@ -19,9 +21,13 @@ Route::get('/rooms', function () {
     return view('pages.rooms');
 })->name('rooms');
 
+Route::get('/rooms/{id}', [RoomsController::class, 'show'])->name('rooms.show');
+
 Route::get('/offers', function () {
     return view('pages.offers');
 })->name('offers');
+
+Route::post('/booking', [BookingController::class, 'store'])->name('booking.store');
 
 Route::get('/contact', function () {
     return view('pages.contact');
