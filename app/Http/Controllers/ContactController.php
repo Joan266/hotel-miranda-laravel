@@ -27,10 +27,12 @@ class ContactController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreContactRequest $request)
+    public function store(Request $request)
     {
-        //
+        Message::create($request->all());
+        return redirect()->back()->with('success', 'Message sent successfully.');
     }
+  
 
     /**
      * Display the specified resource.
