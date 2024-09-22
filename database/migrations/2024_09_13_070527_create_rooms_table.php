@@ -11,16 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('rooms', function (Blueprint $table) {
-            $table->id();
+        Schema::create('rooms', function (Blueprint $table) {
+            $table->id(); // Crea un campo 'id' auto_increment
             $table->string('room_type'); 
             $table->string('bed_type'); 
             $table->string('floor_room'); 
             $table->json('facilities'); 
             $table->decimal('rate', 8, 2); 
             $table->enum('status', ['available', 'booked', 'maintenance'])->default('available'); 
-            $table->timestamps();
-       
+            $table->timestamps(); 
         });
     }
 
@@ -29,9 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('rooms');
-        Schema::table('rooms', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('rooms'); // Elimina la tabla si existe
     }
 };
