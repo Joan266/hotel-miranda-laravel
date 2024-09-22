@@ -11,8 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('bookings', function (Blueprint $table) {
-            $table->id();
+        Schema::create('bookings', function (Blueprint $table) {
+            $table->id(); // Crea un campo 'id' auto_increment
             $table->foreignId('user_id')->constrained()->onDelete('cascade'); 
             $table->foreignId('room_id')->constrained()->onDelete('cascade'); 
             $table->timestamp('order_date');
@@ -28,9 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('bookings');
-        Schema::table('bookings', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('bookings'); // Elimina la tabla si existe
     }
 };
