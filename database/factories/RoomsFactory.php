@@ -2,26 +2,26 @@
 
 namespace Database\Factories;
 
-use App\Models\Room;
+use App\Models\Rooms;
+use App\Models\RoomType;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class RoomFactory extends Factory
+class RoomsFactory extends Factory
 {
-    protected $model = Room::class;
+    protected $model = Rooms::class;
 
     public function definition()
     {
+        $roomNumber = $this->faker->unique()->numberBetween(100, 999);
+        
         return [
-            'room_type' => $this->faker->word(),
-            'bed_type' => $this->faker->word(),
-            'floor_room' => $this->faker->numberBetween(1, 10),
-            'facilities' => json_encode([
-                'WiFi' => true,
-                'Air Conditioning' => true,
-                'Breakfast' => false,
-            ]),
-            'rate' => $this->faker->randomFloat(2, 50, 500), 
-            'status' => $this->faker->randomElement(['available', 'booked', 'maintenance']),
+            'room_type_id' => RoomType::inRandomOrder()->first()->id,
+            'room_number' => $roomNumber,
         ];
+    }
+
+    public function validate(array $data): void
+    {
+        Rooms::validate($data)->validate();
     }
 }

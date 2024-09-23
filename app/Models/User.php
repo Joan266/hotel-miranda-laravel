@@ -45,11 +45,7 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
-    public function activities(): HasMany
-    {
-        return $this->hasMany(Activity::class);
-    }
-
+ 
     public function bookings()
     {
         return $this->hasMany(Bookings::class);

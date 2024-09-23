@@ -12,13 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('bookings', function (Blueprint $table) {
-            $table->id(); // Crea un campo 'id' auto_increment
+            $table->id(); 
             $table->foreignId('user_id')->constrained()->onDelete('cascade'); 
             $table->foreignId('room_id')->constrained()->onDelete('cascade'); 
             $table->timestamp('order_date');
             $table->timestamp('check_in'); 
             $table->timestamp('check_out'); 
-            $table->enum('status', ['pending', 'confirmed', 'cancelled'])->default('pending'); 
             $table->timestamps(); 
         });
     }
@@ -28,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('bookings'); // Elimina la tabla si existe
+        Schema::dropIfExists('bookings'); 
     }
 };

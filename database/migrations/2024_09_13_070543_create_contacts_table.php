@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('contacts', function (Blueprint $table) { 
             $table->id(); 
             $table->foreignId('user_id')->constrained()->onDelete('cascade'); 
-            $table->foreignId('room_id')->constrained()->onDelete('cascade'); 
             $table->text('message');
             $table->string('subject');
             $table->unsignedTinyInteger('rating'); 

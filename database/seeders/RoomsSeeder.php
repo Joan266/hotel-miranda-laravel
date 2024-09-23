@@ -2,13 +2,13 @@
 
 namespace Database\Seeders;
 
+use App\Models\Rooms;
 use Illuminate\Database\Seeder;
-use App\Models\Room;
 
-class RoomSeeder extends Seeder
+class RoomsSeeder extends Seeder
 {
     public function run()
     {
-        Room::factory()->count(12)->create();
+        Rooms::factory()->count(14)->create();
     }
 }

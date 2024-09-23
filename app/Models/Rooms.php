@@ -16,26 +16,22 @@ class Rooms extends Model
      * @var array
      */
     protected $fillable = [
-        'room_type',
-        'bed_type',
-        'floor_room',
-        'facilities',
-        'rate',
-        'status',
+        'room_type_id', 
+        'room_number',   
     ];
 
-  
+    /**
+     * Define the relationship with RoomType.
+     */
+    public function roomType()
+    {
+        return $this->belongsTo(RoomType::class);
+    }
+    
     public function bookings()
     {
         return $this->hasMany(Bookings::class);
     }
-
-   
-    public function contact()
-    {
-        return $this->hasMany(Contact::class);
-    }
-
     /**
      * Add validation logic for room data.
      *
@@ -45,13 +41,8 @@ class Rooms extends Model
     public static function validate($data)
     {
         return Validator::make($data, [
-            'room_type' => 'required|string|max:255', 
-            'bed_type' => 'required|string|max:255',
-            'floor_room' => 'required|string|max:255', 
-            'facilities' => 'required|array', 
-            'facilities.*' => 'string|max:255',
-            'rate' => 'required|numeric|min:0',
-            'status' => 'required|in:available,booked,maintenance', 
+            'room_type_id' => 'required|exists:room_types,id', 
+            'room_number' => 'required|unique:rooms,room_number|string|max:255',
         ]);
     }
 }
