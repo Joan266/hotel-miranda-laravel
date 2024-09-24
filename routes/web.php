@@ -16,8 +16,9 @@ Route::view('/offers', 'pages.offers')->name('offers');
 Route::view('/contacts', 'pages.contacts')->name('contacts');
 
 // Room Type Route
-Route::get('/rooms', [RoomTypeController::class, 'index'])->name('rooms');
+Route::get('/rooms', [RoomsController::class, 'index'])->name('rooms');
 Route::get('/rooms/{id}', [RoomsController::class, 'show'])->name('roomdetails');
+Route::post('/rooms/{id}/check-availability', [RoomTypeController::class, 'checkAvailability'])->name('roomdetails.checkAvailability');
 
 // Booking Routes
 Route::post('/booking', [BookingController::class, 'store'])->name('booking.store');

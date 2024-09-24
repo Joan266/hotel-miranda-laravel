@@ -175,12 +175,12 @@
   .room-details {
     display: flex;
     flex-direction: row;
-    gap: 2em;
+    gap: 0.5em;
     justify-content: space-between;
   }
 
   .room-details__info {
-    width: 65%;
+    width: 55%;
 
     >section {
       margin-bottom: 4em;
@@ -195,12 +195,12 @@
   .room-details__form--desktop {
     display: block;
     margin-top: 0;
-    width: 30%;
+    width: 40%;
     position: relative;
 
     >form {
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-      padding: 3em 2.5em;
+      padding: 2em;
 
       >h5 {
         font-weight: 700;
@@ -240,7 +240,7 @@
     width: 100%;
     margin-top: 4em;
     margin-bottom: 2em;
-
+    height: 20em;
     >img {
       width: 100%;
       height: 100%;
@@ -257,9 +257,11 @@
   .amenities {
     margin-left: 1em;
   }
-
   .amenities__grid {
     grid-template-columns: repeat(3, 1fr);
+  }
+  .amenities__item {
+    font-size: 0.7rem;
   }
 
   .founder {
@@ -270,5 +272,27 @@
 
   .cancellation {
     margin-left: 1em;
+  }
+}
+@media only screen and (min-width: 1500px) {
+  .room-details {
+    gap: 1em;
+  }
+
+  .room-details__info {
+    width: 60%;
+  }
+
+  .room-details__form--desktop {
+    width: 35%;
+    >form {
+      padding: 3em 2.5em;
+    }
+  }
+
+
+  .room-details__img {
+    height: 30em;
+ 
   }
 }
