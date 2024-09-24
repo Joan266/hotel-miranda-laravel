@@ -4,7 +4,7 @@
         <div class="rooms__grid__item">
             <div class="rooms__grid__item__features">
                 <img class="rooms__grid__item__features__icons" src="{{ asset('icon/hotel-room-features 1.svg') }}" alt="Hotel room features">
-                <img class="rooms__grid__item__features__img" src="{{ asset('img/' . $roomType->image) }}" alt="{{ $roomType->name }}">
+                <img class="rooms__grid__item__features__img" src="{{ asset($roomType->image) }}" alt="{{ $roomType->name }}">
             </div>
             <div class="rooms__grid__item__description">
                 <h4 class="title title--black title--small">{{ $roomType->name }}</h4>

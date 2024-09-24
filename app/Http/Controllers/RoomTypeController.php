@@ -13,10 +13,4 @@ class RoomTypeController extends Controller
         return view('pages.rooms', compact('roomTypes'));
     }
 
-    public function show($id)
-    {
-        $roomType = RoomType::findOrFail($id);  
-        return view('pages.roomdetails', compact('roomType'));
-    }
-
 }

@@ -62,7 +62,7 @@ class RoomTypeSeeder extends Seeder
                 'name' => 'Penthouse',
                 'price_per_night' => 500.00,
                 'bed_type' => 'King',
-                'image' => 'img/Miranda_Family-Room-webp',
+                'image' => 'img/Miranda_Family-Room.webp',
                 'sqm' => 100,
                 'adults_capacity' => 4,
                 'children_capacity' => 2,
