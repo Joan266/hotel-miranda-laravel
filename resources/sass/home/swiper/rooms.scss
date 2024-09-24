@@ -14,6 +14,7 @@
   .swiper-slide__room-features {
     position: absolute;
     top: 0;
+    width: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
@@ -69,19 +70,20 @@
     padding-bottom: 15em;
 
     .swiper-button-next {
-      top: 10em;
+      top: 13em;
     }
 
     .swiper-button-prev {
-      top: 10em;
+      top: 13em;
     }
 
     .swiper-slide {
-      height: 17em;
+      height: 23em;
 
       .swiper-slide__room-features {
         transition: all 100ms ease;
         opacity: 0;
+        width: 65%;
       }
 
       .swiper-slide__room-description {
@@ -100,11 +102,11 @@
 
       .swiper-slide__room-description {
         opacity: 1;
-        padding: 0.5em 1.25em;
+        padding: 1em 3em;
 
         .swiper-slide__room-description__price {
-          font-size: 1.5rem;
-
+          font-size: 1.8rem;
+          color: $beige-tan;
         }
       }
     }
@@ -119,19 +121,6 @@
 
     .swiper-button-prev {
       left: 30%;
-    }
-
-    .swiper-slide {
-      .swiper-slide__room-description {
-        display: flex;
-        text-align: left;
-
-        .swiper-slide__room-description__price {
-          margin-left: 2em;
-          margin-top: 2em;
-          width: 45%;
-        }
-      }
     }
   }
 }
