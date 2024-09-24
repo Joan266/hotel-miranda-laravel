@@ -1,45 +1,30 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const availabilityForm = document.getElementById('availability-form');
-    
-    if (availabilityForm) {
-        flatpickr("#check-in", {
-            minDate: "today", 
-        });
+    const form = document.getElementById('availability-form');
+    const roomId = form.getAttribute('data-room-type-id');
+    const dateRangeInput = document.getElementById('date-range');
 
-        flatpickr("#check-out", {
-            minDate: "today", 
-        });
+    const fp = flatpickr(dateRangeInput, {
+        mode: "range",
+        minDate: "today",
+        altInput: true,
+        altFormat: "F j, Y",
+        dateFormat: "Y-m-d",
+        disable: [], 
+        onReady: function() {
+            fetchUnavailableDates(roomId);
+        },
+    });
 
-        availabilityForm.addEventListener('submit', function (event) {
-            event.preventDefault(); 
-            
-            const roomTypeId = this.dataset.roomTypeId;
-            const checkIn = document.getElementById('check-in').value;
-            const checkOut = document.getElementById('check-out').value;
-
-            fetch(`/rooms/${roomTypeId}/check-availability`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'), 
-                },
-                body: JSON.stringify({
-                    check_in: checkIn,
-                    check_out: checkOut,
-                }),
-            })
+    function fetchUnavailableDates(roomId) {
+        fetch(`/rooms/${roomId}/check-availability`)
             .then(response => response.json())
             .then(data => {
-                if (data.available) {
-                    alert('Rooms are available! You can proceed with booking.');
-                } else {
-                    alert(data.message);
+                if (data.unavailable_dates) {
+                    fp.set("disable", data.unavailable_dates);
                 }
             })
             .catch(error => {
-                console.error('Error:', error);
-                alert('An error occurred while checking availability. Please try again.');
+                console.error('Error fetching unavailable dates:', error);
             });
-        });
     }
 });

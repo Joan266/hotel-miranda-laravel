@@ -16,9 +16,12 @@ Route::view('/offers', 'pages.offers')->name('offers');
 Route::view('/contacts', 'pages.contacts')->name('contacts');
 
 // Room Type Route
-Route::get('/rooms', [RoomsController::class, 'index'])->name('rooms');
-Route::get('/rooms/{id}', [RoomsController::class, 'show'])->name('roomdetails');
-Route::post('/rooms/{id}/check-availability', [RoomTypeController::class, 'checkAvailability'])->name('roomdetails.checkAvailability');
+Route::prefix('rooms')->group(function () {
+    Route::get('/', [RoomTypeController::class, 'index'])->name('rooms');
+    Route::get('/{id}', [RoomsController::class, 'show'])->name('roomdetails');
+    Route::get('/{id}/check-availability', [RoomsController::class, 'checkAvailability'])->name('roomdetails.checkAvailability');
+    Route::post('/{id}/reserve', [BookingsController::class, 'store'])->name('roomdetails.reserve');
+});
 
 // Booking Routes
 Route::post('/booking', [BookingController::class, 'store'])->name('booking.store');

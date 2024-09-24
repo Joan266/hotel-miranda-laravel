@@ -1,15 +1,6 @@
 <div class="room-details__form room-details__form--desktop">
-    <form id="availability-form" data-room-type-id="{{ $roomType->id }}">
+    <form id="availability-form" data-room-type-id="{{ $room->id }}">
         @csrf
-        <h5>Check Availability</h5>
-        <label for="check-in">Check In</label>
-        <div class="input-container">
-            <input id="check-in" name="check_in" type="text" required>
-        </div>
-        <label for="check-out">Check Out</label>
-        <div class="input-container">
-            <input id="check-out" name="check_out" type="text" required>
-        </div>
         <label for="fullname">Full Name</label>
         <div class="input-container">
             <input id="fullname" name="fullname" type="text" placeholder="Enter your full name" required>
@@ -22,7 +13,11 @@
         <div class="input-container">
             <input id="phone" name="phone" type="text" placeholder="Enter your phone number" required>
         </div>
+        <label for="check-in">Select Dates</label>
+        <div class="input-container">
+            <input id="date-range" name="date_range" type="text" required placeholder="Select Check-in and Check-out dates">
+        </div>
 
-        <button type="submit" class="button">CHECK AVAILABILITY</button>
+        <button type="submit" class="button">RESERVE</button>
     </form>
 </div>
