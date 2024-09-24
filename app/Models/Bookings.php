@@ -10,14 +10,10 @@ class Bookings extends Model
 {
     use HasFactory;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
     protected $fillable = [
         'user_id',
         'room_id',
+        'order_date',
         'check_in',
         'check_out',
         'status',
@@ -32,21 +28,26 @@ class Bookings extends Model
     {
         return $this->belongsTo(Room::class);
     }
-    
-    /**
-     * Add validation logic for booking data.
-     *
-     * @param array $data
-     * @return \Illuminate\Contracts\Validation\Validator
-     */
+
     public static function validate($data)
     {
         return Validator::make($data, [
             'user_id' => 'required|exists:users,id', 
             'room_id' => 'required|exists:rooms,id', 
+            'order_date' => 'required|date|before:check_in', 
             'check_in' => 'required|date|after:today', 
             'check_out' => 'required|date|after:check_in',
             'status' => 'required|in:pending,confirmed,cancelled', 
         ]);
+    }
+
+    public static function hasConflictingBooking($roomId, $checkIn, $checkOut)
+    {
+        return self::where('room_id', $roomId)
+            ->where(function ($query) use ($checkIn, $checkOut) {
+                $query->whereBetween('check_in', [$checkIn, $checkOut])
+                      ->orWhereBetween('check_out', [$checkIn, $checkOut]);
+            })
+            ->exists();
     }
 }
