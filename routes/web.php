@@ -8,18 +8,16 @@ use App\Http\Controllers\ContactsController;
 use App\Http\Controllers\ProfileController;
 
 // Home Route
-Route::get('/', function () {
-    return view('pages.home');
-})->name('home');
+Route::get('/', [RoomTypeController::class, 'homepage'])->name('home');
 
 // Static Pages
 Route::view('/aboutus', 'pages.aboutus')->name('about');
 Route::view('/offers', 'pages.offers')->name('offers');
 Route::view('/contacts', 'pages.contacts')->name('contacts');
-Route::view('/roomdetails', 'pages.roomdetails')->name('roomdetails');
 
 // Room Type Route
 Route::get('/rooms', [RoomTypeController::class, 'index'])->name('rooms');
+Route::get('/rooms/{id}', [RoomsController::class, 'show'])->name('roomdetails');
 
 // Booking Routes
 Route::post('/booking', [BookingController::class, 'store'])->name('booking.store');

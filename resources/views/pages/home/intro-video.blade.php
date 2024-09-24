@@ -9,7 +9,7 @@
                     Your browser does not support the video tag.
                 </video>
             </div>
-            <a href="{{ route('roomdetails') }}" class="button">BOOK NOW</a>
+            <a href="" class="button">RESERVE NOW</a>
         </div>
         <div class="intro-video__video intro-video__video--desktop">
             <video src="{{ asset('video/hotel_miranda_intro.mp4') }}" title="Hotel Miranda Video" controls autoplay muted>

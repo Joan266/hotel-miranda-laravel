@@ -2,8 +2,10 @@
     <div class="container">
         <h1 class="subtitle">THE ULTIMATE LUXURY EXPERIENCE</h1>
         <h2 class="title">The Perfect Base For You</h2>
-        <a class="button" href="#">TAKE A TOUR</a>
-        <a class="button button--black" href="#">LEARN MORE</a>
+        <div class="buttons">
+            <a class="button" href="#">TAKE A TOUR</a>
+            <a class="button button--black" href="#">LEARN MORE</a>
+        </div>
         <form action="#" method="GET">
             <div>
                 <label for="arrival-date">Arrival Date</label>

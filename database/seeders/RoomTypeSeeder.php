@@ -15,7 +15,7 @@ class RoomTypeSeeder extends Seeder
         $roomTypes = [
             [
                 'name' => 'Single Room',
-                'price_per_night' => 75.00,
+                'price_per_night' => 75,
                 'bed_type' => 'Single',
                 'image' => 'img/Miranda_Explorer-Suite-Bedroom.webp',
                 'sqm' => 25, 
@@ -24,7 +24,7 @@ class RoomTypeSeeder extends Seeder
             ],
             [
                 'name' => 'Double Room',
-                'price_per_night' => 120.00,
+                'price_per_night' => 120,
                 'bed_type' => 'Double',
                 'image' => 'img/Miranda_Cotton-Tree-Suite.webp',
                 'sqm' => 35,
@@ -33,7 +33,7 @@ class RoomTypeSeeder extends Seeder
             ],
             [
                 'name' => 'Deluxe Room',
-                'price_per_night' => 200.00,
+                'price_per_night' => 200,
                 'bed_type' => 'King',
                 'image' => 'img/Miranda_Superior-King-Room.webp',
                 'sqm' => 45,
@@ -42,7 +42,7 @@ class RoomTypeSeeder extends Seeder
             ],
             [
                 'name' => 'Suite',
-                'price_per_night' => 350.00,
+                'price_per_night' => 350,
                 'bed_type' => 'King',
                 'image' => 'img/Miranda_Signature-Suite.webp',
                 'sqm' => 60,
@@ -51,7 +51,7 @@ class RoomTypeSeeder extends Seeder
             ],
             [
                 'name' => 'Family Room',
-                'price_per_night' => 180.00,
+                'price_per_night' => 180,
                 'bed_type' => 'Queen',
                 'image' => 'img/Miranda_Deluxe-Room.webp',
                 'sqm' => 50,
@@ -60,7 +60,7 @@ class RoomTypeSeeder extends Seeder
             ],
             [
                 'name' => 'Penthouse',
-                'price_per_night' => 500.00,
+                'price_per_night' => 500,
                 'bed_type' => 'King',
                 'image' => 'img/Miranda_Family-Room.webp',
                 'sqm' => 100,

@@ -289,13 +289,19 @@
     >div {
       padding-top: 12em;
     }
-
+    .buttons {
+      display: flex;
+      flex-direction: row;
+      gap:1em;
+      align-self: center;
+      justify-content: left;
+    }
     .button--black {
       margin-left: 0;
     }
 
     h2 {
-      font-size: 4rem;
+      font-size: 6rem;
       max-width: 7em;
       margin-bottom: 0;
     }
@@ -326,8 +332,8 @@
   }
 
   .intro::after {
-    top: 19.5em;
-    height: 32em;
+    top: 17.5em;
+    height: 39em;
     transform: translateY(-50%);
   }
 
@@ -345,8 +351,10 @@
 
     .about-us__header {
       margin-top: 6.5em;
-      width: 30%;
-
+      width: 35%;
+      .button {
+        font-size: 1rem;
+      }
       .text {
         max-width: 30em;
       }
@@ -355,7 +363,7 @@
     .cards-container {
       display: flex;
       flex-direction: row;
-      width: 70%;
+      width: 65%;
       gap: 2.5em;
     }
 
@@ -377,10 +385,10 @@
   .about-us:after {
     content: "";
     position: absolute;
-    top: 27%;
-    width: 45%;
+    top: 24%;
+    width: 47%;
     z-index: -1;
-    height: 75%;
+    height: 80%;
     background-color: #F9F9F9;
   }
 
@@ -405,6 +413,9 @@
       gap: 2em;
       z-index: 0;
       position: relative;
+      .button{
+        font-size: 1rem;
+      }
     }
 
     .text {

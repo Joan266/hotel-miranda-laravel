@@ -6,7 +6,7 @@
     @include('pages.roomdetails.page-intro')
     <section class="room-details container"> 
       @include('pages.roomdetails.info')
-      @include('pages.roomdetails.form')
+      @include('pages.roomdetails.form') 
     </section>
 @endsection
 

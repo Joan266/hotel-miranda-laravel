@@ -152,7 +152,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .text--small {
-  font-size: 0.65rem;
+  font-size: 0.7rem;
 }
 
 .text--white {
@@ -179,7 +179,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   font-weight: 700;
   margin-top: 1em;
   width: fit-content;
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   font-family: $font-archivo;
   cursor: pointer;
   box-shadow: 1px 5px 9px rgba(0, 0, 0, 0.09);
@@ -386,14 +386,14 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   }
 
   .text--small {
-    font-size: 0.7rem;
+    font-size: 0.72rem;
   }
 }
 
 
 @media only screen and (min-width: 1500px) {
   .container {
-    max-width: 1150px;
+    max-width: 1400px;
     margin-bottom: 8em;
   }
 }

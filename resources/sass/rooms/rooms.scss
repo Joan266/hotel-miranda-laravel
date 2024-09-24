@@ -102,11 +102,12 @@
   }
 
   .rooms__grid__item__description__price {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
   }
 
   .rooms__grid__item__description__booking {
     font-family: $font-archivo;
-    font-size: 1.2rem;
+    font-size: 1rem;
+    color: $tan;
   }
 }
