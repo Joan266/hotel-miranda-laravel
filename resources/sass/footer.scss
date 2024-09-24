@@ -144,7 +144,7 @@
   }
 
   .footer__info__about,
-  .footer__info__service,
+  .footer__info__services,
   .footer__info__contact {
     width: 100%;
     flex: 1;
@@ -169,10 +169,10 @@
 
 @media only screen and (min-width: 1500px) {
   .footer__info {
-    max-width: 1150px;
+    max-width: 1400px;
   }
 
   .footer__cr-text {
-    max-width: 1150px;
+    max-width: 1400px;
   }
 }

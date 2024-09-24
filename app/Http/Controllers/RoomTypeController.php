@@ -12,5 +12,9 @@ class RoomTypeController extends Controller
         $roomTypes = RoomType::all();  
         return view('pages.rooms', compact('roomTypes'));
     }
-
+    public function homepage()
+    {
+        $roomTypes = RoomType::all();  
+        return view('pages.home', compact('roomTypes'));
+    }
 }

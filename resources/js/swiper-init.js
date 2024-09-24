@@ -67,6 +67,7 @@ let roomsSwiper = new Swiper(".swiper--rooms", {
 });
 let relatedRoomsSwiper = new Swiper(".swiper--related-rooms", {
   slidesPerView: 1,
+  slidesPerGroup: 1,
   loop: true,
   navigation: {
     nextEl: ".swiper-button-next",
@@ -75,6 +76,7 @@ let relatedRoomsSwiper = new Swiper(".swiper--related-rooms", {
   breakpoints: {
     1000: {
       slidesPerView: 2,
+      slidesPerGroup: 2,
       spaceBetween: 30,
     }
   }

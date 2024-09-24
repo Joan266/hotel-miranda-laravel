@@ -4,7 +4,7 @@
             <h3 class="subtitle">ABOUT US</h3>
             <h4 class="title">Discover Our Underground.</h4>
             <p class="text about-us__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            <a href="{{ route('roomdetails') }}" class="button">BOOK NOW</a>
+            <a href="" class="button">RESERVE NOW</a>
         </div>
         <div class="cards-container">
             <div class="about-us__card about-us__card--white">
