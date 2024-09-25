@@ -13,7 +13,7 @@ Route::get('/', [RoomTypeController::class, 'homepage'])->name('home');
 // Static Pages
 Route::view('/aboutus', 'pages.aboutus')->name('about');
 Route::view('/offers', 'pages.offers')->name('offers');
-Route::view('/contacts', 'pages.contacts')->name('contacts');
+Route::view('/contact', 'pages.contact')->name('contact');
 
 // Room Type Route
 Route::prefix('rooms')->group(function () {
@@ -24,7 +24,7 @@ Route::prefix('rooms')->group(function () {
 });
 
 // Booking Routes
-Route::post('/booking', [BookingController::class, 'store'])->name('booking.store');
+Route::post('/booking', [BookingsController::class, 'store'])->name('bookings.store');
 
 // Contacts Routes
 Route::post('/contacts', [ContactsController::class, 'store'])->name('contacts.store');

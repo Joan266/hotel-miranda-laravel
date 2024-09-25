@@ -11,7 +11,6 @@ class Bookings extends Model
     use HasFactory;
 
     protected $fillable = [
-        'user_id',
         'room_id',
         'order_date',
         'check_in',
@@ -31,7 +30,6 @@ class Bookings extends Model
     public static function validate($data)
     {
         return Validator::make($data, [
-            'user_id' => 'exists:users,id', 
             'room_id' => 'required|exists:rooms,id', 
             'order_date' => 'required|date|before:check_in', 
             'check_in' => 'required|date|after:today', 

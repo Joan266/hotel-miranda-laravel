@@ -1,5 +1,5 @@
 <section class="contact__form container">
-    <form action="{{ route('contact.store') }}" method="POST">
+    <form action="{{ route('contacts.store') }}" method="POST">
         @csrf
         <div class="desktop-agrupation">
             <div class="contact__form__input">

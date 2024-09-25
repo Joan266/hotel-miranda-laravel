@@ -1,6 +1,8 @@
 <div class="room-details__form room-details__form--desktop">
-    <form id="availability-form" data-room-type-id="{{ $room->id }}">
+    <form id="availability-form" action="{{ route('bookings.store') }}" method="POST" data-room-type-id="{{ $room->id }}">
         @csrf
+        <input type="hidden" name="room_type_id" value="{{ $room->id }}"> 
+
         <label for="fullname">Full Name</label>
         <div class="input-container">
             <input id="fullname" name="fullname" type="text" placeholder="Enter your full name" required>
