@@ -14,14 +14,14 @@ class BookingsController extends Controller
             'fullname' => 'required|string|max:255',
             'email' => 'required|email',
             'phone' => 'required|string|max:255',
-            'date_range' => 'required|string', // Assuming this will be a date range string
+            'date_range' => 'required|string', 
         ]);
 
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator)->withInput();
         }
 
-        $roomId = $request->input('room_type_id'); // Use the correct input name here
+        $roomId = $request->input('room_type_id'); 
         $dateRange = explode(' to ', $request->input('date_range')); // Assuming format is "YYYY-MM-DD to YYYY-MM-DD"
 
         if (count($dateRange) !== 2) {
@@ -44,4 +44,29 @@ class BookingsController extends Controller
 
         return redirect()->route('booking.success')->with('success', 'Booking created successfully!');
     }
+    public function checkAvailability($room_id)
+    {
+        $bookings = Bookings::where('room_id', $room_id)->get();  
+    
+        if ($bookings->isEmpty()) {
+            return response()->json(['unavailable_dates' => []]);
+        }
+    
+        $unavailableDates = [];
+    
+        foreach ($bookings as $booking) {
+            $period = new \DatePeriod(
+                new \DateTime($booking->check_in),
+                new \DateInterval('P1D'),
+                (new \DateTime($booking->check_out))->modify('+1 day')  
+            );
+    
+            foreach ($period as $date) {
+                $unavailableDates[] = $date->format('Y-m-d');
+            }
+        }
+    
+        return response()->json(['unavailable_dates' => $unavailableDates]);
+    }
+    
 }

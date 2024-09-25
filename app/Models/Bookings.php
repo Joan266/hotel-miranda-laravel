@@ -16,7 +16,6 @@ class Bookings extends Model
         'order_date',
         'check_in',
         'check_out',
-        'status',
     ];
 
     public function user()
@@ -32,12 +31,11 @@ class Bookings extends Model
     public static function validate($data)
     {
         return Validator::make($data, [
-            'user_id' => 'required|exists:users,id', 
+            'user_id' => 'exists:users,id', 
             'room_id' => 'required|exists:rooms,id', 
             'order_date' => 'required|date|before:check_in', 
             'check_in' => 'required|date|after:today', 
             'check_out' => 'required|date|after:check_in',
-            'status' => 'required|in:pending,confirmed,cancelled', 
         ]);
     }
 

@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\BookingController;
+use App\Http\Controllers\BookingsController;
 use App\Http\Controllers\RoomsController;
 use App\Http\Controllers\RoomTypeController;
 use App\Http\Controllers\ContactsController;
@@ -17,9 +17,9 @@ Route::view('/contacts', 'pages.contacts')->name('contacts');
 
 // Room Type Route
 Route::prefix('rooms')->group(function () {
-    Route::get('/', [RoomTypeController::class, 'index'])->name('rooms');
+    Route::get('/', [RoomsController::class, 'index'])->name('rooms');
     Route::get('/{id}', [RoomsController::class, 'show'])->name('roomdetails');
-    Route::get('/{id}/check-availability', [RoomsController::class, 'checkAvailability'])->name('roomdetails.checkAvailability');
+    Route::get('/{id}/check-availability', [BookingsController::class, 'checkAvailability'])->name('checkAvailability');
     Route::post('/{id}/reserve', [BookingsController::class, 'store'])->name('roomdetails.reserve');
 });
 
