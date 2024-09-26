@@ -8,14 +8,13 @@
                     <span class="crossed night">/Night</span>
                 </span>
                 <span class="offer__price offer__price--discount">
-                    ${{ $offer->room->roomType->price_per_night * (1 - $offer->discount_percentage / 100) }}
-                    <span>/Night</span>
+                    ${{ number_format($offer->room->roomType->price_per_night * (1 - $offer->discount_percentage / 100), 2) }}<span>/Night</span>
                 </span>
             </div>
             <div class="offer__description">
                 <h3 class="subtitle">{{ $offer->room->roomType->bed_type }}</h3>
                 <h4 class="title title--black title--medium">
-                    <a href="{{ route('roomdetails', ['id' => $offer->room->id]) }}">{{ $offer->room->roomType->name }}</a>
+                    <a href="{{ route('roomdetails',  ['id' => $offer->room->id]) }}">{{ $offer->room->roomType->name }}</a>
                 </h4>
                 <p class="text text--small">
                     Relax in our cozy, well-appointed room featuring modern amenities, a plush bed, free Wi-Fi, and a flat-screen TV. Enjoy a serene space perfect for unwinding or getting work done, complete with a private bathroom and complimentary toiletries. Your comfort is our priority.
@@ -65,7 +64,7 @@
                     <div>
                         <h3 class="subtitle">{{ $offer->room->roomType->bed_type }}</h3>
                         <h4 class="title title--black title--medium">
-                            <a href="{{ route('roomdetails', ['id' => $offer->room->id]) }}">{{ $offer->room->roomType->name }}</a>
+                            <a href="{{ route('roomdetails',  ['id' => $offer->room->id]) }}">{{ $offer->room->roomType->name }}</a>
                         </h4>
                     </div>
                     <div>
@@ -74,7 +73,7 @@
                             <span class="crossed night">/Night</span>
                         </span>
                         <span class="offer__price offer__price--discount">
-                            ${{ $offer->room->roomType->price_per_night * (1 - $offer->discount_percentage / 100) }}<span>/Night</span>
+                            ${{ number_format($offer->room->roomType->price_per_night * (1 - $offer->discount_percentage / 100), 2) }}<span>/Night</span>
                         </span>
                     </div>
                 </div>
