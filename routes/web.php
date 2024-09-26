@@ -17,7 +17,8 @@ Route::view('/contact', 'pages.contact')->name('contact');
 
 // Room Type Route
 Route::prefix('rooms')->group(function () {
-    Route::get('/', [RoomsController::class, 'index'])->name('rooms');
+    Route::get('/', [RoomsController::class, 'index'])->name('rooms'); 
+    Route::get('/available', [RoomsController::class, 'availableRooms'])->name('availableRooms');
     Route::get('/{id}', [RoomsController::class, 'show'])->name('roomdetails');
     Route::get('/{id}/check-availability', [BookingsController::class, 'checkAvailability'])->name('checkAvailability');
     Route::post('/{id}/reserve', [BookingsController::class, 'store'])->name('roomdetails.reserve');

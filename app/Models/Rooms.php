@@ -30,7 +30,7 @@ class Rooms extends Model
     
     public function bookings()
     {
-        return $this->hasMany(Bookings::class);
+        return $this->hasMany(Bookings::class, 'room_id'); 
     }
     /**
      * Add validation logic for room data.

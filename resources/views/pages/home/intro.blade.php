@@ -6,14 +6,15 @@
             <a class="button" href="#">TAKE A TOUR</a>
             <a class="button button--black" href="#">LEARN MORE</a>
         </div>
-        <form action="#" method="GET">
+        <form id="availability-form-home" action="{{ route('availableRooms') }}" method="GET" >
+            @csrf
             <div>
-                <label for="date-range-home">Select Dates</label>
+                <label for="date-range">Select Dates</label>
                 <div class="date-input-container">
                     <input id="date-range-home" name="date_range" type="text" required placeholder="Select Check-in and Check-out dates">
                 </div>
             </div>
-            <a href="#" class="button">CHECK AVAILABILITY</a>
+            <button type="submit" class="button">CHECK AVAILABILITY</button>
         </form>
     </div>
 </section>

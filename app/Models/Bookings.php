@@ -24,7 +24,7 @@ class Bookings extends Model
 
     public function room()
     {
-        return $this->belongsTo(Room::class);
+        return $this->belongsTo(Rooms::class, 'room_id'); 
     }
 
     public static function validate($data)

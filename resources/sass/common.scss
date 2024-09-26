@@ -253,8 +253,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   position: relative;
 
   >div {
-    padding-top: 8em;
-    height: 18em;
+    padding-top: 6em;
+    height: 20em;
   }
 
   &::after {
@@ -277,7 +277,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     top: 0;
     z-index: -2;
     background-color: #333333;
-    height: 18em;
+    height: 20em;
   }
 }
 
@@ -356,7 +356,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     >div {
       padding-bottom: 3em;
       padding-top: 12em;
-      height: 25em;
+      height: 27em;
       margin-bottom: 4em;
     }
 
@@ -365,7 +365,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     }
 
     &::before {
-      height: 25em;
+      height: 27em;
     }
   }
 
