@@ -12,8 +12,10 @@ Route::get('/', [RoomTypeController::class, 'homepage'])->name('home');
 
 // Static Pages
 Route::view('/aboutus', 'pages.aboutus')->name('about');
-Route::view('/offers', 'pages.offers')->name('offers');
 Route::view('/contact', 'pages.contact')->name('contact');
+
+// Offers Routes
+Route::get('/offers', [RoomsController::class, 'offers'])->name('offers');
 
 // Room Type Route
 Route::prefix('rooms')->group(function () {

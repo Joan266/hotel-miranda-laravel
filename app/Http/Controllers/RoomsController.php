@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\RoomType; 
 use App\Models\Rooms;
+use App\Models\Offers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -13,6 +14,13 @@ class RoomsController extends Controller
     {
         $rooms = Rooms::with('roomType')->get();  
         return view('pages.rooms', compact('rooms'));
+    }
+
+    public function offers()
+    {
+        $offers = Offers::with(['room.roomType'])->get();
+        $popularRooms = RoomType::take(6)->get();  
+        return view('pages.offers', compact('offers', 'popularRooms'));
     }
     public function show($id)
     {
