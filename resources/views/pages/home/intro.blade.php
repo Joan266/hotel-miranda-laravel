@@ -8,15 +8,9 @@
         </div>
         <form action="#" method="GET">
             <div>
-                <label for="arrival-date">Arrival Date</label>
+                <label for="date-range-home">Select Dates</label>
                 <div class="date-input-container">
-                    <input id="arrival-date" name="arrival-date" type="date">
-                </div>
-            </div>
-            <div>
-                <label for="departure-date">Departure Date</label>
-                <div class="date-input-container">
-                    <input id="departure-date" name="departure-date" type="date">
+                    <input id="date-range-home" name="date_range" type="text" required placeholder="Select Check-in and Check-out dates">
                 </div>
             </div>
             <a href="#" class="button">CHECK AVAILABILITY</a>

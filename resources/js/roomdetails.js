@@ -1,8 +1,8 @@
 const form = document.getElementById('availability-form');
 const roomId = form.getAttribute('data-room-type-id');
-const dateRangeInput = document.getElementById('date-range');
+const dateRangeInputRoomDetails = document.getElementById('date-range-roomdetails');
 
-const fp = flatpickr(dateRangeInput, {
+const fp_roomdetails = flatpickr(dateRangeInputRoomDetails, {
     mode: "range",
     minDate: "today",
     altInput: true,
@@ -25,7 +25,7 @@ function fetchUnavailableDates(roomId) {
         })
         .then(data => {
             if (data.unavailable_dates && Array.isArray(data.unavailable_dates)) {
-                fp.set("disable", data.unavailable_dates);
+                fp_roomdetails.set("disable", data.unavailable_dates);
             } else {
                 console.warn('Unavailable dates not found or invalid format:', data);
             }
