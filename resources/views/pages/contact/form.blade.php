@@ -1,4 +1,5 @@
 <section class="contact__form container">
+    <h2 class="title title--small"><strong>Contact Us Today</strong></h2>
     <form action="{{ route('contacts.store') }}" method="POST">
         @csrf
         <div class="desktop-agrupation">

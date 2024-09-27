@@ -3,16 +3,23 @@ document.getElementById('hamburguer').addEventListener('click', function () {
   var menuIcon = document.getElementById('menu-icon');
   var dropDown = document.getElementById('drop-down');
 
+  var hamburgerIcon = menuIcon.getAttribute('data-hamburger');
+  var crossIcon = menuIcon.getAttribute('data-cross');
+
   if (menu.classList.contains('menu--dropdown')) {
     menu.classList.remove('menu--dropdown');
-    menuIcon.src = 'icon/hamburguer 1.svg';
+    menuIcon.src = hamburgerIcon;
+    menuIcon.alt = "Menu";
     dropDown.classList.remove('drop-down--open');
   } else {
     menu.classList.add('menu--dropdown');
-    menuIcon.src = 'icon/cross.svg';
+    menuIcon.src = crossIcon;
+    menuIcon.alt = "Close menu";
     dropDown.classList.add('drop-down--open');
   }
 });
+
+
 
 let isMenuVisible = true;
 const threshold = 50;

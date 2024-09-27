@@ -2,7 +2,7 @@
     <div id="menu-mobile" class="menu-mobile">
         <div class="menu-mobile__container">
             <div id="hamburguer" class="icon">
-                <img id="menu-icon" src="{{ asset('icon/hamburguer 1.svg') }}" alt="hamburguer menu">
+                <img id="menu-icon" src="{{ asset('icon/hamburguer_1.svg') }}" alt="Menu" data-hamburger="{{ asset('icon/hamburguer_1.svg') }}" data-cross="{{ asset('icon/cross.svg') }}">
             </div>
             <a href="{{ url('/') }}">
                 <article class="logo">
