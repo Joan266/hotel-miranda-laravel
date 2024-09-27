@@ -11,12 +11,10 @@ class Bookings extends Model
     use HasFactory;
 
     protected $fillable = [
-        'user_id',
         'room_id',
         'order_date',
         'check_in',
         'check_out',
-        'status',
     ];
 
     public function user()
@@ -26,18 +24,16 @@ class Bookings extends Model
 
     public function room()
     {
-        return $this->belongsTo(Room::class);
+        return $this->belongsTo(Rooms::class, 'room_id'); 
     }
 
     public static function validate($data)
     {
         return Validator::make($data, [
-            'user_id' => 'required|exists:users,id', 
             'room_id' => 'required|exists:rooms,id', 
             'order_date' => 'required|date|before:check_in', 
             'check_in' => 'required|date|after:today', 
             'check_out' => 'required|date|after:check_in',
-            'status' => 'required|in:pending,confirmed,cancelled', 
         ]);
     }
 

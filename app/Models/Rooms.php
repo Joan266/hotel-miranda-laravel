@@ -27,10 +27,15 @@ class Rooms extends Model
     {
         return $this->belongsTo(RoomType::class, 'room_type_id'); 
     }
-    
+
+    public function offers()
+    {
+        return $this->hasOne(Offers::class, 'room_id');
+    }
+
     public function bookings()
     {
-        return $this->hasMany(Bookings::class);
+        return $this->hasMany(Bookings::class, 'room_id'); 
     }
     /**
      * Add validation logic for room data.

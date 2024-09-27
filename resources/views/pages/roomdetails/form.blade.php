@@ -1,6 +1,8 @@
 <div class="room-details__form room-details__form--desktop">
-    <form id="availability-form" data-room-type-id="{{ $room->id }}">
+    <form id="availability-form" action="{{ route('bookings.store') }}" method="POST" data-room-type-id="{{ $room->id }}">
         @csrf
+        <input type="hidden" name="room_type_id" value="{{ $room->id }}"> 
+
         <label for="fullname">Full Name</label>
         <div class="input-container">
             <input id="fullname" name="fullname" type="text" placeholder="Enter your full name" required>
@@ -13,9 +15,9 @@
         <div class="input-container">
             <input id="phone" name="phone" type="text" placeholder="Enter your phone number" required>
         </div>
-        <label for="check-in">Select Dates</label>
+        <label for="date-range-roomdetails">Select Dates</label>
         <div class="input-container">
-            <input id="date-range" name="date_range" type="text" required placeholder="Select Check-in and Check-out dates">
+            <input id="date-range-roomdetails" name="date_range" type="text" required placeholder="Select Check-in and Check-out dates">
         </div>
 
         <button type="submit" class="button">RESERVE</button>

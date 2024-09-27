@@ -238,14 +238,6 @@
       margin-bottom: 1.5em;
     }
 
-    .date-input-container::after {
-      content: url(../../../public/icon/calendar_icon%202.svg);
-      position: absolute;
-      left: 0;
-      top: 50%;
-      transform: translateY(-50%);
-    }
-
     input {
       cursor: pointer;
       width: 100%;
@@ -255,9 +247,8 @@
       color: #686868;
       font-family: $font-roboto;
       font-weight: 400;
-      font-size: 0.7rem;
+      font-size: 0.75rem;
       height: 2.7em;
-      padding-left: 2.5em;
     }
   }
 }
@@ -316,7 +307,7 @@
       padding: 1em 0;
 
       label {
-        font-size: 0.7rem;
+        font-size: 0.8rem;
       }
 
       input {

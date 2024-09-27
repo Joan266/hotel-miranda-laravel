@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\RoomType; 
 use App\Models\Rooms;
+use App\Models\Offers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class RoomsController extends Controller
 {
@@ -12,6 +14,13 @@ class RoomsController extends Controller
     {
         $rooms = Rooms::with('roomType')->get();  
         return view('pages.rooms', compact('rooms'));
+    }
+
+    public function offers()
+    {
+        $offers = Offers::with(['room.roomType'])->get();
+        $popularRooms = RoomType::take(6)->get();  
+        return view('pages.offers', compact('offers', 'popularRooms'));
     }
     public function show($id)
     {
@@ -21,25 +30,42 @@ class RoomsController extends Controller
         
         return view('pages.roomdetails', compact('room', 'roomTypes'));
     }
-    
-    public function checkAvailability($id)
+    public function availableRooms(Request $request)
     {
-        $room = Rooms::with('bookings')->findOrFail($id);
-
-        $unavailableDates = [];
-
-        foreach ($room->bookings as $booking) {
-            $period = new \DatePeriod(
-                new \DateTime($booking->check_in),
-                new \DateInterval('P1D'),
-                (new \DateTime($booking->check_out))->modify('+1 day')
-            );
-
-            foreach ($period as $date) {
-                $unavailableDates[] = $date->format('Y-m-d');
-            }
+        $validator = Validator::make($request->all(), [
+            'date_range' => 'required|string',
+        ]);
+    
+        if ($validator->fails()) {
+            return redirect()->back()->with('error', $validator->errors()->first());
+            return response()->json(['error' => $validator->errors()->first()], 422);
         }
 
-        return response()->json(['unavailable_dates' => $unavailableDates]);
+        $dateRange = explode('to', $request->input('date_range')); 
+        
+        if (count($dateRange) !== 2) {
+            return redirect()->back()->with('error', 'Invalid date range format. Please use --start date to end date--.');
+        }    
+
+        $checkIn = $dateRange[0];
+        $checkOut = $dateRange[1];
+
+        $rooms = Rooms::whereDoesntHave('bookings', function($query) use ($checkIn, $checkOut) {
+            $query->where(function($q) use ($checkIn, $checkOut) {
+                $q->whereBetween('check_in', [$checkIn, $checkOut])
+                ->orWhereBetween('check_out', [$checkIn, $checkOut])
+                ->orWhere(function($query) use ($checkIn, $checkOut) {
+                    $query->where('check_in', '<=', $checkIn)
+                            ->where('check_out', '>=', $checkOut);
+                });
+            });
+        })->with('roomType')->get(); 
+
+        if ($rooms->isEmpty()) {
+            return redirect()->back()->with('error', 'No available rooms for the selected dates.');
+        }
+
+        return view('pages.rooms', compact('rooms'));
     }
+ 
 }

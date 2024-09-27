@@ -11,12 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('bookings', function (Blueprint $table) {
-            $table->id(); 
-            $table->foreignId('room_id')->constrained()->onDelete('cascade'); 
-            $table->timestamp('order_date');
-            $table->timestamp('check_in'); 
-            $table->timestamp('check_out'); 
+        Schema::create('offers', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('room_id')
+                ->constrained() 
+                ->onDelete('cascade')
+                ->unique(); 
+
+            $table->decimal('discount_percentage', 5, 0); 
+            $table->timestamp('valid_until'); 
             $table->timestamps(); 
         });
     }
@@ -26,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('bookings'); 
+        Schema::dropIfExists('offers');
     }
 };

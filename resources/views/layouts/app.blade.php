@@ -11,7 +11,8 @@
         'resources/js/app.js'
     ])
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <!-- Include SweetAlert2 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
     @stack('styles')
 </head>
 <body>
@@ -21,36 +22,27 @@
 
     @include('partials.footer') 
 
-    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <!-- Include SweetAlert2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             @if (session('error'))
-                Toastify({
-                    className: "toastError",
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
                     text: "{{ session('error') }}",
-                    duration: 3000, // Duration of the notification
-                    gravity: "top", // Position of the notification (top or bottom)
-                    offset: {
-                        y: 150
-                    },
-                    style: {
-                        background: "linear-gradient(to right, #FF5F6D, #FFC371)"
-                    }
-                }).showToast();
+                    timer: 3000,
+                    showConfirmButton: false
+                });
             @endif
             @if (session('success'))
-                Toastify({
-                    className: "toastSuccess",
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Success',
                     text: "{{ session('success') }}",
-                    duration: 3000, // Duration of the notification
-                    gravity: "top", // Position of the notification (top or bottom)
-                    offset: {
-                        y: 150
-                    },
-                    style: {
-                        background: "linear-gradient(to right, #00b09b, #96c93d)"
-                    }
-                }).showToast();
+                    timer: 3000,
+                    showConfirmButton: false
+                });
             @endif
         });
     </script>

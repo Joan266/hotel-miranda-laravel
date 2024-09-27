@@ -24,6 +24,6 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     @vite([
         'resources/js/swiper-init.js',
-        'resources/js/flatpickr-init.js',
+        'resources/js/roomdetails.js',
     ])
 @endpush
