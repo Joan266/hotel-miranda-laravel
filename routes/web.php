@@ -10,9 +10,14 @@ use App\Http\Controllers\ProfileController;
 // Home Route
 Route::get('/', [RoomTypeController::class, 'homepage'])->name('home');
 
-// Static Pages
+// Aboutus Routes
 Route::view('/aboutus', 'pages.aboutus')->name('about');
-Route::view('/contact', 'pages.contact')->name('contact');
+
+// Contact Routes
+Route::prefix('contact')->group(function () {
+    Route::get('/', [ContactsController::class, 'index'])->name('contact'); 
+    Route::post('/store', [ContactsController::class, 'store'])->name('contact.store'); 
+});
 
 // Offers Routes
 Route::get('/offers', [RoomsController::class, 'offers'])->name('offers');
@@ -28,9 +33,6 @@ Route::prefix('rooms')->group(function () {
 
 // Booking Routes
 Route::post('/booking', [BookingsController::class, 'store'])->name('bookings.store');
-
-// Contacts Routes
-Route::post('/contacts', [ContactsController::class, 'store'])->name('contacts.store');
 
 // Authenticated Routes
 Route::middleware(['auth', 'verified'])->group(function () {

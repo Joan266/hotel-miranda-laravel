@@ -4,7 +4,6 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\Validator;
 
 class RoomType extends Model
 {
@@ -27,16 +26,4 @@ class RoomType extends Model
         return $this->hasMany(Rooms::class);
     }
     
-    public static function validate(array $data)
-    {
-        return Validator::make($data, [
-            'name' => 'required|string|max:255',
-            'price_per_night' => 'required|numeric|min:0',
-            'bed_type' => 'required|string|max:255',
-            'image' => 'nullable|string|max:255',
-            'sqm' => 'required|integer|min:1',
-            'adults_capacity' => 'required|integer|min:0',
-            'children_capacity' => 'required|integer|min:0',
-        ]);
-    }
 }
