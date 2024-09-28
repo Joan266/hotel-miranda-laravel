@@ -43,11 +43,4 @@ class Rooms extends Model
      * @param array $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
-    public static function validate($data)
-    {
-        return Validator::make($data, [
-            'room_type_id' => 'required|exists:room_types,id', 
-            'room_number' => 'required|unique:rooms,room_number|string|max:255',
-        ]);
-    }
 }
