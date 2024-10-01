@@ -22,12 +22,4 @@ class Offers extends Model
     {
         return $this->belongsTo(Rooms::class, 'room_id');
     }
-
-    /**
-     * Check if the offer is still valid.
-     */
-    public function isValid()
-    {
-        return Carbon::now()->lt(Carbon::parse($this->valid_until));
-    }
 }
