@@ -19,6 +19,7 @@ jobs:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USERNAME }}
           key: ${{ secrets.EC2_SSH_KEY }}
+          passphrase: ${{ secrets.EC2_SSH_PASSPHRASE }} 
           script: |
             cd /var/www/HM-Laravel
             sudo -u www-data git pull origin main
