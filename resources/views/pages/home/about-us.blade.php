@@ -9,7 +9,7 @@
         <div class="cards-container">
             <div class="about-us__card about-us__card--white">
                 <div class="about-us__card__img">
-                    <img src="{{ asset('img/lux-room.webp') }}" alt="luxury room">
+                    <img src="{{ asset('img/pleasent.webp') }}" alt="luxury room">
                 </div>
                 <div class="about-us__card__description">
                     <div class="about-us__card__description__background-icon">
@@ -24,7 +24,7 @@
             </div>
             <div class="about-us__card about-us__card--black">
                 <div class="about-us__card__img">
-                    <img src="{{ asset('img/hotel-crew.webp') }}" alt="hotel crew">
+                    <img src="{{ asset('img/night_club.webp') }}" alt="hotel crew">
                 </div>
                 <div class="about-us__card__description">
                     <div class="about-us__card__description__icon">
