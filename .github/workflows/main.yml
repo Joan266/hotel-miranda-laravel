@@ -19,9 +19,15 @@ jobs:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USERNAME }}
           key: ${{ secrets.EC2_SSH_KEY }}
-          passphrase: ${{ secrets.EC2_SSH_PASSPHRASE }} 
+          passphrase: ${{ secrets.EC2_SSH_PASSPHRASE }}
           script: |
             cd /var/www/HM-Laravel
+            
+            # Adjust permissions for the build directory to avoid permission issues
+            sudo chown -R www-data:www-data /var/www/HM-Laravel/public/build
+            sudo chmod -R 775 /var/www/HM-Laravel/public/build
+            
+            # Deploy and build process
             sudo -u www-data git pull origin main
             sudo -u www-data composer install
             sudo -u www-data npm install        
@@ -30,4 +36,6 @@ jobs:
             sudo -u www-data php artisan config:cache
             sudo -u www-data php artisan route:cache
             sudo -u www-data php artisan view:cache
+            
+            # Restart Apache server
             sudo systemctl restart apache2
