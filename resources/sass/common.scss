@@ -276,9 +276,13 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     left: 0;
     top: 0;
     z-index: -2;
-    background-color: #333333;
     height: 20em;
+  
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), 
+                url('/public/img/background_1.webp') no-repeat center center;
+    background-size: cover;
   }
+  
 }
 
 .page-intro__path-info {

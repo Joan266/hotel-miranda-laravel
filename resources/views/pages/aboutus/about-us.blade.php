@@ -1,6 +1,6 @@
 <section class="about-us container">
     <div class="video">
-        <video src="{{ asset('video/hotel_miranda_intro.mp4') }}" title="{{ __('Hotel Miranda Video') }}" controls autoplay muted>
+        <video src="{{ asset('video/niña_hotel.mp4') }}" title="{{ __('Hotel Miranda Video') }}" controls autoplay muted>
             {{ __('Your browser does not support the video tag.') }}
         </video>
     </div>
@@ -48,7 +48,7 @@
 
     <div class="about-us__restaurant">
         <div class="about-us__restaurant__img">
-            <img src="{{ asset('img/restaurant.webp') }}" alt="{{ __('restaurant image') }}">
+            <img src="{{ asset('img/breakfast.webp') }}" alt="{{ __('restaurant image') }}">
         </div>
         
         <div class="about-us__restaurant__info">

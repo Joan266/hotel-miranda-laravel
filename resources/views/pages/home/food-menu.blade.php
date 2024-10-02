@@ -12,7 +12,7 @@
             <div class="swiper-slide">
                 <div class="swiper-slide__info">
                     <div class="swiper-slide__info__img">
-                        <img src="{{ asset('img/eggs-bacon.webp') }}" alt="food 1">
+                        <img src="{{ asset('img/meal_1.webp') }}" alt="food 1">
                     </div>
                     <div class="swiper-slide__info__container">
                         <div class="swiper-slide__info__container__description">
@@ -26,7 +26,7 @@
                 </div>
                 <div class="swiper-slide__info">
                     <div class="swiper-slide__info__img">
-                        <img src="{{ asset('img/coffe-machine.webp') }}" alt="Tea or Coffee">
+                        <img src="{{ asset('img/meal_2.webp') }}" alt="Tea or Coffee">
                     </div>
                     <div class="swiper-slide__info__container">
                         <div class="swiper-slide__info__container__description">
@@ -41,7 +41,7 @@
 
                 <div class="swiper-slide__info">
                     <div class="swiper-slide__info__img">
-                        <img src="{{ asset('img/avocado-toast.webp') }}" alt="Chia OatMeal">
+                        <img src="{{ asset('img/meal_3.webp') }}" alt="Chia OatMeal">
                     </div>
                     <div class="swiper-slide__info__container">
                         <div class="swiper-slide__info__container__description">
@@ -58,7 +58,7 @@
             <div class="swiper-slide">
                 <div class="swiper-slide__info">
                     <div class="swiper-slide__info__img">
-                        <img src="{{ asset('img/eggs-bacon.webp') }}" alt="food 1">
+                        <img src="{{ asset('img/meal_4.webp') }}" alt="food 1">
                     </div>
                     <div class="swiper-slide__info__container">
                         <div class="swiper-slide__info__container__description">
@@ -73,7 +73,7 @@
                 
                 <div class="swiper-slide__info">
                     <div class="swiper-slide__info__img">
-                        <img src="{{ asset('img/coffe-machine.webp') }}" alt="Tea or Coffee">
+                        <img src="{{ asset('img/meat_dish.webp') }}" alt="Tea or Coffee">
                     </div>
                     <div class="swiper-slide__info__container">
                         <div class="swiper-slide__info__container__description">
@@ -88,7 +88,7 @@
 
                 <div class="swiper-slide__info">
                     <div class="swiper-slide__info__img">
-                        <img src="{{ asset('img/avocado-toast.webp') }}" alt="Chia OatMeal">
+                        <img src="{{ asset('img/fish.webp') }}" alt="Chia OatMeal">
                     </div>
                     <div class="swiper-slide__info__container">
                         <div class="swiper-slide__info__container__description">
@@ -156,26 +156,26 @@
     <div class="swiper swiper--food">
         <div class="swiper-wrapper">
             <div class="swiper-slide">
-                <img class="swiper-slide__img" src="{{ asset('img/slider-food-1.webp') }}" alt="food 1">
+                <img class="swiper-slide__img" src="{{ asset('img/breakfast.webp') }}" alt="food 1">
             </div>
             <div class="swiper-slide">
-                <img class="swiper-slide__img" src="{{ asset('img/slider-food-2.webp') }}" alt="food 2">
+                <img class="swiper-slide__img" src="{{ asset('img/fresh_aperitive.webp') }}" alt="food 2">
             </div>
             <div class="swiper-slide">
-                <img class="swiper-slide__img" src="{{ asset('img/slider-food-3.webp') }}" alt="food 3">
+                <img class="swiper-slide__img" src="{{ asset('img/slider-food-2.webp') }}" alt="food 3">
             </div>
         </div>
         <div class="swiper-pagination"></div>
     </div>
     <div class="non-swiper non-swiper--food">
         <div class="non-swiper__item">
-            <img src="{{ asset('img/slider-food-1.webp') }}" alt="food 1">
+            <img src="{{ asset('img/breakfast.webp') }}" alt="food 1">
         </div>
         <div class="non-swiper__item">
-            <img src="{{ asset('img/slider-food-2.webp') }}" alt="food 2">
+            <img src="{{ asset('img/fresh_aperitive.webp') }}" alt="food 2">
         </div>
         <div class="non-swiper__item">
-            <img src="{{ asset('img/slider-food-3.webp') }}" alt="food 3">
+            <img src="{{ asset('img/slider-food-2.webp') }}" alt="food 3">
         </div>
     </div>
 </section>
