@@ -37,4 +37,4 @@ Miranda Hotel web using HTML/CSS/JS with Laravel(Docker), Eloquent and MYSQL
 ## Contact
 
 - LinkedIn [Profile](https://www.linkedin.com/in/joan-alemany-chulilla/)
-- GitHub [@init1-dev](https://github.com/Joan266)
+- GitHub [@Joan266](https://github.com/Joan266)
