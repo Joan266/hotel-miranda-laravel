@@ -29,10 +29,6 @@ Miranda Hotel web using HTML/CSS/JS with Laravel(Docker), Eloquent and MYSQL
 - [DOCKER](https://docs.docker.com/build/cloud/)
 - [MYSQL](https://dev.mysql.com/doc/)
 
-## Features
-
-### Usage instructions:
-
 ## Next Updates
 
 ### TODO:
