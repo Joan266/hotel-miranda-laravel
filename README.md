@@ -13,7 +13,6 @@
     - [Built With](#built-with)
 - [Features](#features)
 - [Next Updates](#Next-updates)
-- [Project Urls](#Project-urls)
 - [Contact](#contact)
 
 ## Overview
